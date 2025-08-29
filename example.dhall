@@ -1,5 +1,4 @@
 {- Need to generate a lot of users?
-
    Use the `generate` function from the Dhall Prelude
 -}
 let generate = https://prelude.dhall-lang.org/List/generate

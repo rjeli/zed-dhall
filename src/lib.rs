@@ -1,4 +1,4 @@
-use zed_extension_api::{self as zed, Result};
+use zed_extension_api::{self as zed, Result, serde_json::json};
 
 const BIN_NAME: &'static str = "dhall-lsp-server";
 
@@ -26,6 +26,26 @@ impl zed::Extension for DhallExtension {
             env: Default::default(),
         })
     }
+
+    fn language_server_workspace_configuration(
+        &mut self,
+        _language_server_id: &zed::LanguageServerId,
+        _worktree: &zed::Worktree,
+    ) -> Result<Option<zed::serde_json::Value>> {
+        Ok(Some(json!({
+            "vscode-dhall-lsp-server": {},
+        })))
+    }
+
+    // fn language_server_initialization_options(
+    //     &mut self,
+    //     _language_server_id: &zed::LanguageServerId,
+    //     _worktree: &zed::Worktree,
+    // ) -> Result<Option<zed::serde_json::Value>> {
+    //     Ok(Some(json!({
+    //         "vscode-dhall-lsp-server": {},
+    //     })))
+    // }
 }
 
 zed::register_extension!(DhallExtension);
