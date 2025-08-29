@@ -2,7 +2,4 @@ name = "Dhall"
 grammar = "dhall"
 path_suffixes = ["dhall"]
 line_comments = ["-- "]
-
-# autoclose_before = ""
-# brackets = []
-# word_characters = []
+block_comment = ["{- ", " -}"]
