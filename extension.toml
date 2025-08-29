@@ -1,0 +1,15 @@
+id = "dhall"
+name = "Dhall"
+description = "Dhall support"
+version = "0.0.1"
+schema_version = 1
+authors = ["Eli Riggs (eli@rje.li)"]
+repository = "https://github.com/rjeli/zed-dhall"
+
+[grammars.dhall]
+repository = "https://github.com/jbellerb/tree-sitter-dhall"
+rev = "62013259b26ac210d5de1abf64cf1b047ef88000"
+
+[language_servers.dhall-lsp-server]
+# name = "dhall-lsp"
+languages = ["Dhall"]
